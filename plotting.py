@@ -1,6 +1,6 @@
 import cupy as cp
 import matplotlib
-matplotlib.use('GTK3Agg') # tested with 'GTK3Agg', 'TkAgg', 'TkCairo', 'WebAgg' backends
+matplotlib.use('TkAgg') # tested with 'GTK3Agg', 'TkAgg', 'TkCairo', 'WebAgg' backends
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib.widgets import Slider
@@ -120,7 +120,7 @@ class FlockPlotter(object):
             sliders.append(slider_widget)
 
         ani = animation.FuncAnimation(fig, self.update_plot, frames=range(numframes),
-                                      fargs=(scat,), interval=50, repeat=True)
+                                      fargs=(scat,), interval=10, repeat=True)
 
         plt.show()
 
